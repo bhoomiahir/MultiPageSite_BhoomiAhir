@@ -1,0 +1,465 @@
+body {
+  display: grid;
+  grid-template-rows: repeat(4,auto);
+  grid-template-areas: 
+  "header"
+  "hero-section"
+  "story-section"
+  "timeline"
+  "team"
+  "footer";
+}
+
+.story-tag,p, .year, .tag, .tm-tag, .team-bio, .copyright {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  grid-area: header;
+  position: sticky;
+  top:0;
+}
+
+.about-hero {
+  grid-area: hero-section;
+  height: 500px;
+  background: #EDE9FE;              /* Soft Lavender — Hero BG */
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* Two equal columns */
+  gap: 60px;
+  align-items: center;
+  position: relative;               /* Needed for glows */
+  overflow: hidden;                 /* Keeps glows inside */
+}
+
+/* ── Glow 1 — Top Right ── */
+.about-hero::before {
+  content: '';                      /* Must have this */
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;               /* Makes it a circle */
+  top: -100px;
+  right: -60px;
+  background: radial-gradient(
+    circle,
+    rgba(167, 139, 250, 0.18),      /* #A78BFA @ 18% opacity */
+    transparent 70%
+  );
+  pointer-events: none;             /* Won't block clicks */
+}
+
+/* ── Glow 2 — Bottom Left ── */
+.about-hero::after {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  bottom: -60px;
+  left: 25%;
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.08),       /* #7C3AED @ 8% opacity */
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+
+/* ════════════════════════════
+   LEFT — TEXT CONTENT
+════════════════════════════ */
+
+.about-hero-text {
+  position: relative;
+  z-index: 2;                       /* Sits above the glows */
+  animation: fadeUp 0.7s ease both 0.1s;
+}
+
+/* Pill Badge */
+.about-pill {
+  display: inline-block;
+  background: #7C3AED;              /* Deep Violet */
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Headline */
+.about-hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #1A1025;                   /* Near Black */
+  margin-bottom: 18px;
+}
+
+/* Italic accent word */
+.about-hero-text h1 em {
+  font-style: italic;
+  color: #7C3AED;                   /* Deep Violet */
+}
+
+/* Subtext paragraph */
+.about-hero-text p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #5B2D8E;                   /* Mid Purple */
+  max-width: 440px;
+  margin-bottom: 32px;
+}
+
+/* CTA Button */
+.about-hero-btn {
+  display: inline-block;
+  background: #1A1025;              /* Near Black */
+  color: #FFFFFF;
+  padding: 13px 30px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-hero-btn:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
+}
+
+
+/* ════════════════════════════
+   RIGHT — STAT CARDS
+════════════════════════════ */
+
+.about-hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 2;                       /* Sits above the glows */
+  animation: fadeUp 0.7s ease both 0.3s;
+}
+
+/* Individual Stat Card */
+.stat-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+
+
+/* Offset middle card to the right */
+.stat-card:nth-child(2) {
+  margin-left: 32px;
+}
+
+.stat-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #7C3AED;                   /* Deep Violet */
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #5B2D8E;                   /* Mid Purple */
+  margin-top: 3px;
+}
+
+/* section-2 here story */
+
+.story {
+  grid-area: story-section;
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: #fff;
+}
+
+.storysec {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: #fff;
+}
+
+.image {
+  height: 540px;
+  width: 430px;
+  border-radius: 30px;
+}
+
+.image img {
+  height: 540px;
+  width: 430px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.box2 {
+  height: 70%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.story-tag {
+  color: #c084fc;
+  font-size: 15px;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.heading {
+  font-size: 38px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #1a1025;
+  margin-bottom: 10px;
+  align-self: flex-start;
+
+}
+
+.heading em  {
+  font-size: 38px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  color: #7c3aed;
+}
+
+.line {
+  border-bottom: 2px solid #c084fc;
+  width: 50px;
+  margin: 22px 0;
+  align-self: flex-start;
+
+}
+
+.body-text {
+  color: #5a4570;
+  margin-top: 14px;
+  font-size: 20px;
+  width: 70%;
+  align-self: flex-start;
+
+}
+
+.timeline {
+    height: auto;
+  background-color: #1a1025;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+    font-size: 19px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.box3 {
+  height: auto;
+  background-color: #1a1025;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 90px 60px;
+}
+
+.time {
+  display: flex;
+  gap: 2px;
+}
+
+.tl{
+  padding: 36px 28px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, .03);
+  border: rgba(255, 255, 255, .07);
+
+}
+
+.year, .tag {
+  color: #c084fc;
+  margin-bottom: 10px;
+}
+
+.desc{
+  color: #ffffff80;
+}
+
+.h2 {
+  font-size: 38px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 30px;
+}
+
+.h2 span {
+  color: #c084fc;
+  font-style: italic;
+}
+
+.team {
+  background-color: #fdf8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 60px;
+}
+
+.tm-tag {
+  color: #c084fc;
+  margin-bottom: 12px;
+}
+
+.head {
+  font-size: 38px;
+  margin-bottom: 16px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.head span{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  color: #7C3AED;
+}
+
+.tmpara {
+  font-size: 15px;
+  color: #5a4570;
+  margin: 0 195px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.members {
+  display: flex;
+  gap: 10px
+}
+
+.team-cards {
+  padding: 30px 20px;
+  background-color: #fdf8ff;
+  border: 1px solid #EDE9FE;
+  border-radius: 30px;
+  width: 220px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+    #A78BFA,                 
+    #7C3AED );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.name {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  color: #1A1025;
+  margin-bottom: 3px;
+}
+
+.role {
+  font-size: 11px;
+  color: #c084fc;
+  margin-bottom: 10px;
+}
+
+.team-bio {
+  font-size: 12.5px;
+  color: #5a4570;
+  text-align: center;
+  line-height: 1.5;
+}
+
+footer {
+  grid-area: footer;
+  background: linear-gradient(135deg, #f5d0fe, #e0e7ff);
+  padding: 44px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ft-logo {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 26px;
+  color: #1A1025;
+}
+
+.copyright {
+  font-size: 13px;
+  color: #5a4570;
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Product Detail – Rozana</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="product-detail.css"/>
+</head>
+<body>
+
+<!-- ════ NAVBAR ════ -->
+<header>
+    <nav class="header">
+      <div id="logo">
+        <img src="/assests/logo-generator.png" alt="logo">
+      </div>
+      <div class="navs">
+      <div class="btns"><a href="/About.html" target="_self">About</a></div>
+      <div class="btns"><a href="/product.html" target="_self">Product</a></div>
+      <div class="btns"><a href="/contact.html" target="_self">Contact</a></div>
+      </div>
+      <div class="signUp">
+        <button class="tap"><p>Login In/Sign Up</p></button>
+      </div>
+    </nav>
+  </header>
+
+<!--  BREADCRUMB  -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <a href="product.html">Products</a>
+  <span>›</span>
+  <a href="#">Sneakers</a>
+  <span>›</span>
+  Nike's SuperComfy Sneakers
+</div>
+
+<!--  PRODUCT SECTION  -->
+<div class="product-section">
+
+
+  <div class="gallery">
+
+    <div class="main-img">
+      <img src="https://m.media-amazon.com/images/I/71+EtxVzLkL._AC_UL320_.jpg" alt="">
+    </div>
+
+
+    <div class="thumbs">
+      <div class="thumb active">👟</div>
+      <div class="thumb">👟</div>
+      <div class="thumb">📦</div>
+      <div class="thumb">🎁</div>
+    </div>
+
+  </div>
+
+
+  <div class="prod-info">
+
+  
+    <div class="cat-tag">Sneakers · Nike</div>
+
+  
+    <h1 class="prod-title">Nike's SuperComfy Sneakers</h1>
+
+
+    <div class="rating-row">
+      <div class="stars">★★★★★</div>
+      <div class="rating-num">4.8</div>
+      <div class="rating-count">(124 reviews)</div>
+    </div>
+
+  
+    <div class="price-row">
+      <div class="price-main">$60</div>
+      <div class="price-old">$85</div>
+      <div class="discount-badge">29% OFF</div>
+    </div>
+
+
+    <div class="stock-status">Stock Available — Ships in 2–3 days</div>
+
+    <div class="divider-line"></div>
+
+    <!-- Size Selector -->
+    <div class="option-label">Select Size</div>
+    <div class="size-row">
+      <button class="size-btn sold">UK 5</button>
+      <button class="size-btn active">UK 6</button>
+      <button class="size-btn">UK 7</button>
+      <button class="size-btn">UK 8</button>
+      <button class="size-btn">UK 9</button>
+      <button class="size-btn sold">UK 10</button>
+    </div>
+
+    <!-- Color Selector -->
+    <div class="option-label">Select Color</div>
+    <div class="color-row">
+      <div class="color-dot active" style="background:#E8E8E8;"></div>
+      <div class="color-dot" style="background:#1A1025;"></div>
+      <div class="color-dot" style="background:#C084FC;"></div>
+      <div class="color-dot" style="background:#FBBF24;"></div>
+    </div>
+
+    <!-- Quantity -->
+    <div class="option-label">Quantity</div>
+    <div class="qty-row">
+      <div class="qty-control">
+        <button class="qty-btn"
+          onclick="var n=document.getElementById('qty');
+                   n.textContent=Math.max(1,+n.textContent-1)">
+          −
+        </button>
+        <div class="qty-num" id="qty">1</div>
+        <button class="qty-btn"
+          onclick="var n=document.getElementById('qty');
+                   n.textContent=+n.textContent+1">
+          +
+        </button>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-btns">
+      <button class="btn-cart">🛒 Add to Cart</button>
+      <button class="btn-wish">🤍</button>
+    </div>
+
+    <!-- Delivery Info -->
+    <div class="delivery-info">
+      <div class="di-row">
+        <span class="di-icon">🚚</span>
+        <span><strong>Free Delivery</strong> on orders above ₹999</span>
+      </div>
+      <div class="di-row">
+        <span class="di-icon">↩️</span>
+        <span><strong>15-Day Returns</strong> — hassle-free, no questions asked</span>
+      </div>
+      <div class="di-row">
+        <span class="di-icon">🔒</span>
+        <span><strong>Secure Checkout</strong> — 100% safe payments</span>
+      </div>
+    </div>
+
+  </div>
+  <!-- /prod-info -->
+
+</div>
+<!-- /product-section -->
+
+<!-- TABS SECTION  -->
+<div class="tabs-section">
+
+  <!-- Tab Buttons -->
+  <div class="tabs-bar">
+    <button class="tab-btn active"
+            onclick="switchTab('desc', this)">Description</button>
+    <button class="tab-btn"
+            onclick="switchTab('specs', this)">Specifications</button>
+    <button class="tab-btn"
+            onclick="switchTab('reviews', this)">Reviews (124)</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="tab-content">
+
+    <!-- Description Tab -->
+    <div class="tab-pane active" id="desc">
+      <p>The Nike SuperComfy Sneakers are engineered for all-day wear
+         without compromising on style. Featuring a breathable mesh upper,
+         cushioned insole, and durable rubber outsole, these sneakers
+         transition seamlessly from morning commutes to evening strolls.</p>
+      <p>The lightweight design reduces foot fatigue while the classic
+         silhouette ensures you stay effortlessly on-trend. Available in
+         four versatile colorways, these are the sneakers your wardrobe
+         has been waiting for.</p>
+    </div>
+
+    <!-- Specifications Tab -->
+    <div class="tab-pane" id="specs">
+      <table class="spec-table">
+        <tr><td>Brand</td><td>Nike</td></tr>
+        <tr><td>Category</td><td>Unisex Sneakers</td></tr>
+        <tr><td>Material</td><td>Mesh Upper, Rubber Sole</td></tr>
+        <tr><td>Closure</td><td>Lace-up</td></tr>
+        <tr><td>Sole Type</td><td>Non-slip Rubber</td></tr>
+        <tr><td>Weight</td><td>~280g per shoe</td></tr>
+        <tr><td>Available Sizes</td><td>UK 5 – UK 10</td></tr>
+        <tr><td>Country of Origin</td><td>India</td></tr>
+      </table>
+    </div>
+
+    <!-- Reviews Tab -->
+    <div class="tab-pane" id="reviews">
+
+      <!-- Rating Summary -->
+      <div class="review-summary">
+        <div>
+          <div class="big-rating">4.8</div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-total">124 reviews</div>
+        </div>
+        <div class="rating-bars">
+          <div class="bar-row">
+            <span class="bar-label">5★</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:80%"></div>
+            </div>
+            <span class="bar-pct">80%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">4★</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:12%"></div>
+            </div>
+            <span class="bar-pct">12%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">3★</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:5%"></div>
+            </div>
+            <span class="bar-pct">5%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">2★</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:2%"></div>
+            </div>
+            <span class="bar-pct">2%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">1★</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:1%"></div>
+            </div>
+            <span class="bar-pct">1%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Cards -->
+      <div class="review-card">
+        <div class="rc-top">
+          <span class="rc-name">Priya M.</span>
+          <span class="rc-stars">★★★★★</span>
+        </div>
+        <div class="rc-date">Feb 2026</div>
+        <p class="rc-text">Absolutely love these! Super comfortable for
+          daily wear and the quality is exactly as described. Shipped fast too.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="rc-top">
+          <span class="rc-name">Arjun K.</span>
+          <span class="rc-stars">★★★★★</span>
+        </div>
+        <div class="rc-date">Jan 2026</div>
+        <p class="rc-text">Great value for money. Looks premium and feels
+          even better. Ordered UK 8 and fits perfectly.</p>
+      </div>
+
+    </div>
+    <!-- /reviews -->
+
+  </div>
+  <!-- /tab-content -->
+
+</div>
+<!-- /tabs-section -->
+
+<!-- RELATED PRODUCTS  -->
+<section class="related">
+  <div class="related-header">
+    <h2 class="related-title">You Might Also <em>Like</em></h2>
+    <a href="product.html" class="see-all">See all →</a>
+  </div>
+  <div class="related-grid">
+
+    <div class="prod-card">
+      <div class="prod-img">👗</div>
+      <div class="prod-card-info">
+        <div class="prod-name">Women's Denim Skirt</div>
+        <div class="prod-price">$35</div>
+        <div class="prod-avail">● Stock Available</div>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-img">👕</div>
+      <div class="prod-card-info">
+        <div class="prod-name">Men's Casual Shirt</div>
+        <div class="prod-price">$45</div>
+        <div class="prod-avail">● Stock Available</div>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-img">👜</div>
+      <div class="prod-card-info">
+        <div class="prod-name">Black Purse</div>
+        <div class="prod-price">$55</div>
+        <div class="prod-avail">● Stock Available</div>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-img">🧥</div>
+      <div class="prod-card-info">
+        <div class="prod-name">Winter Jacket</div>
+        <div class="prod-price">$75</div>
+        <div class="prod-avail">● Stock Available</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--  FOOTER  -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Rozana</div>
+      <p>Tired of finding daily fits? Rozana it.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Sneakers</a></li>
+        <li><a href="#">Bags</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">©2020–2026 Rozana.com · Your Everyday Style, Simplified.</div>
+    <div class="footer-copy">Made with 💜 in Mumbai</div>
+  </div>
+</footer>
+
+<script src="logic.js"></script>
+
+</body>
+</html>
